@@ -17,7 +17,7 @@ function App() {
       setIsLoading(true);
      
       try {
-        const response = await axios.get('http://localhost:5000/api/facts', {
+        const response = await axios.get('https://learneverydaynewsite.onrender.com/api/facts', {
           params: {
             category: currentCategory,
           },
@@ -137,7 +137,7 @@ function NewFactForm({ setFacts, setShowForm }) {
       setFacts((facts) => [newFact, ...facts]);
       async function posttoapi() {
 
-        await axios.post("http://localhost:5000/api/facts", newFact);
+        await axios.post("https://learneverydaynewsite.onrender.com/api/facts", newFact);
       }
       posttoapi();
       setText('');
@@ -260,7 +260,7 @@ function Fact({ fact, facts, setFacts }) {
     }
     async function patchToApi(columnName) {
       console.log(columnName, fact._id, typeof fact._id);
-      await axios.patch('http://localhost:5000/api/facts', {
+      await axios.patch('https://learneverydaynewsite.onrender.com/api/facts', {
         factID: fact._id,
         typeofbutton: columnName,
         count: fact[columnName] + 1,

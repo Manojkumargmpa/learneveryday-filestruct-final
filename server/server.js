@@ -8,7 +8,7 @@ const path=require('path');
 const app = express();
 const port = process.env.port||5000;
 require('dotenv').config();
-const dbUrl=process.env.DATABASE;
+let dbUrl=process.env.DATABASE;
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
